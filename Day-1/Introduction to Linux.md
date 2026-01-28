@@ -1,217 +1,66 @@
-# **Linux for Hackers: Foundations**
+# **Linux for Hackers**
 
 ## **Introduction to Linux**
 
-Linux is a foundational skill for anyone interested in hacking, IT, or general computer knowledge. It's an open-source operating system that offers speed, security, and flexibility.
+Linux is an essential foundational skill for anyone interested in hacking. Understanding Linux is a prerequisite for many tasks in the hacking realm. This series aims to equip learners with the foundational knowledge needed to use Linux effectively. The content presented is applicable to everyone, regardless of background.
 
-### **What is Linux?**
+## **What is Linux?**
 
-- **Kernel vs. Operating System:** While commonly referred to as an operating system, Linux is technically a kernel. The kernel is the core component of an operating system that interfaces with the hardware.
-- **Distributions (Distros):** Operating systems built on top of the Linux kernel are called distributions or "distros." Examples include Parrot OS, Kali Linux, Ubuntu, and CentOS. Each distro may have different features and target audiences.
-- **Parrot OS:** The specific distribution used in this course is Parrot OS, which is designed for hacking and security professionals.
+Linux is not merely an operating system; it is technically a kernel. An operating system (OS) is built on top of this kernel. Common distributions of Linux include:
 
-### **Why Use Linux?**
+- Parrot OS: An OS built specifically for hacking.
+- Kali Linux
+- Ubuntu
+- CentOS
+- Debian
 
-- **Open Source:** Linux is free to use, modify, and distribute. This fosters a large community and rapid development.
-- **Speed and Performance:** Linux is generally faster and more efficient than other operating systems.
-- **Security:** Linux is known for its robust security features.
-- **Prevalence:** The majority of web servers and a significant portion of the internet's infrastructure run on Linux, making it essential for cybersecurity professionals.
-- **Hacking Tools:** Most popular hacking and penetration testing tools are developed for or primarily run on Linux.
+The Linux kernel acts as an interface between hardware (CPU, RAM, hard drive) and the applications that run on the OS, such as hacking tools like Nmap.
+
+### **Benefits of Using Linux**
+
+1. **Open Source**: Linux is free to use and redistribute, allowing for the creation of various distributions.
+2. **Performance**: Linux is typically faster than other operating systems.
+3. **Security**: Linux is known for being more secure, making it the OS of choice for numerous websites and servers.
+4. **Hacking Tools**: Most hacking tools are Linux-based, making it essential for hackers to be proficient in Linux.
 
 ## **The Linux Terminal**
 
-While Linux has graphical user interfaces (GUIs), its true power is unlocked through the command-line interface (CLI), also known as the terminal.
+While Linux has a graphical user interface (GUI), the true power of Linux is unlocked through the command line interface, known as the terminal. Users should familiarize themselves with terminal commands to gain efficiency and control over the system.
 
-### **Accessing the Terminal**
+### **Basic Terminal Commands**
 
-In the provided Hack The Box Academy lab, the terminal can be accessed by clicking on its icon on the desktop.
+1. **pwd**: Print Working Directory
+- Usage: Type pwd and hit enter.
+- Function: Displays the full path of the current directory.
+1. **ls**: List
+- Usage: Type ls and hit enter.
+- Function: Lists the contents of the current directory.
+1. **cd**: Change Directory
+- Usage: Type cd folder_name to move into a specific folder.
+- Example: cd desktop changes the current directory to the Desktop folder.
+- To go back to the previous directory, use cd ...
 
-### **Essential Terminal Commands**
+### **Example Usage of Commands**
 
-The following commands are fundamental for navigating and interacting with the Linux file system.
+1. Start by opening the terminal and entering the pwd command to see your current location in the filesystem.
+2. Use the ls command to list the contents of your current directory, which may include folders like Documents, Downloads, and Desktop.
+3. Navigate to the Desktop directory with the command cd desktop.
+4. List the contents of the Desktop directory using ls.
+5. To return to the previous directory, type cd .. and use pwd to confirm your location.
 
-- 
+## **Understanding the Filesystem**
 
-**pwd (Print Working Directory):**
+The Linux filesystem is structured hierarchically. The root directory, denoted as /, is the top level of the filesystem. From this root, various directories branch out, including /home, which contains user-specific directories.
 
-- **Purpose:** Displays the full path of the current directory you are in.
-- **Example:**
+### **Navigating the Filesystem**
 
-```
-pwd
+- Use pwd to see your current location.
+- Use ls to view the contents of the directory.
+- Use cd to navigate through directories.
+- To move back to the root directory, type cd /.
 
-```
+## **Conclusion**
 
-Output might look like: /home/user/documents
+We covered the basics of Linux, emphasizing its importance for hacking. We explored the differences between the Linux kernel and operating systems, the benefits of using Linux, and fundamental terminal commands. As you continue to learn about Linux, remember to practice these commands to build your proficiency.
 
-- 
-
-**ls (List):**
-
-- **Purpose:** Lists the contents (files and subdirectories) of the current working directory.
-- **Example:**
-
-```
-ls
-
-```
-
-Output might look like: desktop downloads documents notes.txt
-
-- 
-
-**cd (Change Directory):**
-
-- **Purpose:** Changes your current working directory to a specified directory.
-- **Syntax:** cd [directory_name]
-- **Example (moving into a subdirectory):**
-
-```
-cd desktop
-
-```
-
-After running this, pwd would show /home/user/documents/desktop.
-
-- **Example (moving up one directory):**
-- **Purpose:** Navigates to the parent directory of the current directory.
-- **Syntax:** cd ..
-- **Example:** If you are in /home/user/documents/desktop, running cd .. will move you to /home/user/documents.
-- **Example (moving to the root directory):**
-- **Purpose:** Navigates to the root of the file system.
-- **Syntax:** cd /
-- **Example:**
-
-```
-cd /
-
-```
-
-After running this, pwd would show /.
-
-- **Example (moving to the home directory):**
-- **Purpose:** Navigates directly to your user's home directory.
-- **Syntax:** cd ~ or simply cd
-- **Example:**
-
-```
-cd ~
-
-```
-
-This will take you to /home/your_username.
-
-### **Navigating the File System Hierarchy**
-
-Linux uses a hierarchical file system structure, starting from the root directory (/).
-
-- **Root Directory (/):** The topmost directory in the file system. All other directories and files are located under the root.
-- **Home Directory (/home/username):** Each user typically has a dedicated home directory where their personal files and settings are stored.
-
-### **Example Navigation Scenario**
-
-Let's say you start in your home directory:
-
-1. 
-
-**Check your current location:**
-
-```
-pwd
-
-```
-
-Output: /home/user/89786 (The 89786 is an example of a username part in the lab)
-
-1. 
-
-**List the contents of your home directory:**
-
-```
-ls
-
-```
-
-Output: desktop downloads documents templates Postman
-
-1. 
-
-**Change into the desktop directory:**
-
-```
-cd desktop
-
-```
-
-1. 
-
-**Verify you are in the desktop directory:**
-
-```
-pwd
-
-```
-
-Output: /home/user/89786/desktop
-
-1. 
-
-**List the contents of your desktop directory:**
-
-```
-ls
-
-```
-
-Output: (Lists files and folders present on your virtual desktop)
-
-1. 
-
-**Go back up to the parent directory (your home directory):**
-
-```
-cd ..
-
-```
-
-1. 
-
-**Verify you are back in your home directory:**
-
-```
-pwd
-
-```
-
-Output: /home/user/89786
-
-1. 
-
-**Go all the way back to the root directory:**
-
-```
-cd /
-
-```
-
-1. 
-
-**Verify you are at the root:**
-
-```
-pwd
-
-```
-
-Output: /
-
-1. 
-
-**List the contents of the root directory:**
-
-```
-ls
-
-```
-
-Output: bin dev etc home lib media mnt opt proc root run sbin srv sys tmp usr var (This is a typical structure, though it can vary slightly).
+For further exploration and understanding, consider engaging with Hack The Box Academy, which provides guided learning experiences tailored to IT security, including a deeper dive into Linux commands.
