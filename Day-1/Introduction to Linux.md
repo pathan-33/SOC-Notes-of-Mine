@@ -28,7 +28,7 @@ In the provided Hack The Box Academy lab, the terminal can be accessed by clicki
 
 ### **Essential Terminal Commands**
 
-The following commands are fundamental for navigating and interacting with the Linux file system:
+The following commands are fundamental for navigating and interacting with the Linux file system.
 
 - 
 
@@ -37,11 +37,13 @@ The following commands are fundamental for navigating and interacting with the L
 - **Purpose:** Displays the full path of the current directory you are in.
 - **Example:**
 
-```bash
+```
 pwd
+
 ```
 
-Output might look like: `/home/user/documents`
+Output might look like: /home/user/documents
+
 - 
 
 **ls (List):**
@@ -49,34 +51,167 @@ Output might look like: `/home/user/documents`
 - **Purpose:** Lists the contents (files and subdirectories) of the current working directory.
 - **Example:**
 
-```bash
+```
 ls
+
 ```
 
-Output might look like: `desktop downloads documents notes.txt`
+Output might look like: desktop downloads documents notes.txt
+
 - 
 
 **cd (Change Directory):**
 
 - **Purpose:** Changes your current working directory to a specified directory.
-- **Syntax:** `cd [directory_name]`
+- **Syntax:** cd [directory_name]
 - **Example (moving into a subdirectory):**
 
-```bash
-dc desktop  # Note: Correct command should be 'cd' not 'dc'
-def change_directory_to_desktop():  # Pseudocode for clarity in markdown context  	cd('desktop')  # Actual command in terminal would be 'cd desktop'
-def verify_current_directory():  	print(pwd())  # Should output '/home/user/89786/desktop'
-def move_up_one_directory():  	cd('..')  # Moves up one level in hierarchy  
-def move_to_root():  	cd('/')  # Moves to root directory  
-def move_to_home():  	cd('~') or tcd()  # Moves to home directory ```
-the correct command sequence would be:
-desktop` after running this, `pwd` would show `/home/user/documents/desktop`.
-e.g., moving into a subdirectory:
-db cd desktop   # Correct syntax in terminal: 'cd desktop'
-e.g., moving up one directory:
-db cd ..   # Correct syntax: 'cd ..'
-e.g., moving to root:
-db cd /   # Correct syntax: 'cd /'
-e.g., moving to home:
-db cd ~ or just `cd`
-and verifying location with `pwd`.
+```
+cd desktop
+
+```
+
+After running this, pwd would show /home/user/documents/desktop.
+
+- **Example (moving up one directory):**
+- **Purpose:** Navigates to the parent directory of the current directory.
+- **Syntax:** cd ..
+- **Example:** If you are in /home/user/documents/desktop, running cd .. will move you to /home/user/documents.
+- **Example (moving to the root directory):**
+- **Purpose:** Navigates to the root of the file system.
+- **Syntax:** cd /
+- **Example:**
+
+```
+cd /
+
+```
+
+After running this, pwd would show /.
+
+- **Example (moving to the home directory):**
+- **Purpose:** Navigates directly to your user's home directory.
+- **Syntax:** cd ~ or simply cd
+- **Example:**
+
+```
+cd ~
+
+```
+
+This will take you to /home/your_username.
+
+### **Navigating the File System Hierarchy**
+
+Linux uses a hierarchical file system structure, starting from the root directory (/).
+
+- **Root Directory (/):** The topmost directory in the file system. All other directories and files are located under the root.
+- **Home Directory (/home/username):** Each user typically has a dedicated home directory where their personal files and settings are stored.
+
+### **Example Navigation Scenario**
+
+Let's say you start in your home directory:
+
+1. 
+
+**Check your current location:**
+
+```
+pwd
+
+```
+
+Output: /home/user/89786 (The 89786 is an example of a username part in the lab)
+
+1. 
+
+**List the contents of your home directory:**
+
+```
+ls
+
+```
+
+Output: desktop downloads documents templates Postman
+
+1. 
+
+**Change into the desktop directory:**
+
+```
+cd desktop
+
+```
+
+1. 
+
+**Verify you are in the desktop directory:**
+
+```
+pwd
+
+```
+
+Output: /home/user/89786/desktop
+
+1. 
+
+**List the contents of your desktop directory:**
+
+```
+ls
+
+```
+
+Output: (Lists files and folders present on your virtual desktop)
+
+1. 
+
+**Go back up to the parent directory (your home directory):**
+
+```
+cd ..
+
+```
+
+1. 
+
+**Verify you are back in your home directory:**
+
+```
+pwd
+
+```
+
+Output: /home/user/89786
+
+1. 
+
+**Go all the way back to the root directory:**
+
+```
+cd /
+
+```
+
+1. 
+
+**Verify you are at the root:**
+
+```
+pwd
+
+```
+
+Output: /
+
+1. 
+
+**List the contents of the root directory:**
+
+```
+ls
+
+```
+
+Output: bin dev etc home lib media mnt opt proc root run sbin srv sys tmp usr var (This is a typical structure, though it can vary slightly).
